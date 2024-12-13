@@ -5,3 +5,7 @@ const httpClient = axios.create({
 })
 
 export const loginUser = (dataUser)=>httpClient.post('/auth/login', dataUser);
+
+
+//username: 'emilys'
+//password: 'emilyspass'
