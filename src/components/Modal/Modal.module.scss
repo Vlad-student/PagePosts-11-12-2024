@@ -12,11 +12,11 @@
 
 
 .modal-window{
-    width: 400;
+    width: 400px;
     padding:1.5em ;
     background-color: white;
     position: relative;
-    button{
+    >button{
         position: absolute;
         top: 15px;
         right: 15px;
