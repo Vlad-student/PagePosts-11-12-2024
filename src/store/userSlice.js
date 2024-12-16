@@ -18,7 +18,14 @@ initialState:{
     error:null,
     isPending: false,
 },
-reducers: {},
+reducers: {
+    clearError : (state) =>{
+        state.error = null;
+    },
+    clearUser : (state)=>{
+state.user = null;
+    },
+},
 extraReducers: (builder)=>{
     builder.addCase(loginUserAuth.pending, (state, action)=>{
         state.isPending = true;
@@ -35,4 +42,4 @@ extraReducers: (builder)=>{
 })
 
 export default userSlice.reducer;
-
+export const {clearError, clearUser} = userSlice.actions;
