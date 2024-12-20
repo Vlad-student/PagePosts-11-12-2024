@@ -1,7 +1,8 @@
 import { createSlice, isPending, createAsyncThunk } from "@reduxjs/toolkit";
 import { loginUser } from "../api";
 
-export const loginUserAuth = createAsyncThunk('user/loginUserAuth',
+export const loginUserAuth = createAsyncThunk(
+    'user/loginUserAuth',
      async(userData, thunkAPI)=>{
 try {
     const response = await loginUser(userData);
