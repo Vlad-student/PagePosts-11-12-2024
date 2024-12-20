@@ -7,6 +7,8 @@ import LoginForm from '../forms/LoginForm';
 import { useSelector, useDispatch } from "react-redux";
 import { clearError, clearUser } from '../../store/userSlice';
 import Spinner from '../Spinner/Spinner';
+import { NavLink } from 'react-router-dom';
+import styles from './Header.module.scss'
 
 const Header = () => {
     const {user, error, isPending} = useSelector((state)=>state.user);
@@ -21,19 +23,25 @@ const Header = () => {
     const closeErrorModal = ()=> {dispatch(clearError())};
     const logoutUser = ()=> {dispatch(clearUser())};
     return (
-        <header>
-            <div>
+        <header className={styles.header}> 
+            <div className={styles.headerTop}>
                 {isPending? <Spinner/> : user ? (
                 <p>
-                    Welcome ,{user.username}
+                   <span>Welcome ,{user.username}</span> 
                  <Icon size={1} path={mdiLogoutVariant} onClick={logoutUser}/>
                  </p> 
             ): (
             <Icon size={1} path={mdiLoginVariant} onClick={handLogin}/>
                 )}
             </div>
+
+            <div className={styles.headerBottom}>
+                <NavLink to='/Home' className={styles.logo}>Logo</NavLink>
+                <Menu/>
+                <input type="text" placeholder='search' />
+            </div>
             
-            <Menu/>
+            
             {isShowModal && (
             <Modal closeModal={closeModal}>
                 <LoginForm closeModal={closeModal}/> 
