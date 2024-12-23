@@ -15,11 +15,12 @@ const showUser = (user)=> <UserCard key={user.id} user={user}/>;
 
 
     if (error){return <p>{error}</p>}
-    if (isPending) {return <Spinner/>}
+    // if (isPending) {return <Spinner/>}
+    if (isPending) { return <p>Loading</p> }
 
     return (
         users.length === 0 ? (<p>list users empty</p>)
-         :( <section>
+         :( <section className={styles['users-list']}>
             {users.map(showUser)}
          </section>)
     );

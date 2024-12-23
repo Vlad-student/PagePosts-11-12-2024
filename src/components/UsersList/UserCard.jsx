@@ -1,10 +1,16 @@
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 import styles from './User.module.scss';
 
 const UserCard = (props) => {
     const {user} = props;
+    const navigate = useNavigate();
+    const navigateToUserPage = () => {
+        navigate(`/users/${user.id}`)
+        
+    }
     return (
-        <article className={styles ['user-card']}>
+        <article className={styles ['user-card']} onClick={navigateToUserPage}>
              <div > <img src={user.image} alt="" />
             <h3>{user.firstName} {user.lastName} </h3>
             <p>{user.company.title} @{user.company.department} </p>
@@ -15,6 +21,7 @@ const UserCard = (props) => {
 
 UserCard.propTypes = {
     user: PropTypes.shape({
+        id: PropTypes.number,
         image: PropTypes.string,
         firstName: PropTypes.string,
         lastName: PropTypes.string,

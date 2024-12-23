@@ -1,10 +1,10 @@
 import UsersList from "../components/UsersList/UsersList";
-
+import styles from './pages.module.scss'
 
 const BlogPage = () => {
     return (
-        <div>
-            <h1>Blog</h1>
+        <div className={styles.wrapper}>
+            <h1>Autors</h1>
             <UsersList/>
         </div>
     );

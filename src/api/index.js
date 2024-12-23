@@ -13,3 +13,4 @@ export const loginUser = (dataUser)=>httpClient.post('/auth/login', dataUser);
 //password: 'emilyspass'
 
 export const getAllUsers = ()=> httpClient.get('/users');
+export const getOneUser = (id) => httpClient.get(`/users/${id}`);

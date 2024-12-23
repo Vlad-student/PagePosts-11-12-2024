@@ -1,5 +1,13 @@
 .user-card{
-    min-width: 296px;
+    width: 25% - 2% ;
+    min-width: 270px;
     min-height: 308px;
     text-align: center;
+    margin: 1%;
+    cursor:pointer ;
+}
+.users-list{
+    display: flex;
+    flex-wrap: wrap;
+justify-content: space-between;
 }
