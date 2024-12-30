@@ -18,7 +18,7 @@ function App() {
        <Route path='/' element={<HomePage/>} />
         <Route path='/Users' element= {<UsersPage/>} />
         <Route path='/users/:userId' element= {<UserProfile/>} />
-        <Route path='/Single' element= {<SinglePost/>} />
+        <Route path='/single-post' element= {<SinglePost/>} />
         <Route path='/Pages' element= {<Pages/>} />
         <Route path='/Contact' element= {<Contact/>} />
        <Route path='*' element= {<NotFoundPage/>} />
@@ -28,3 +28,7 @@ function App() {
 }
 
 export default App
+
+
+
+

@@ -13,8 +13,8 @@ const Menu = () => {
                 to ='/Users'
                 className={({ isActive }) => isActive ? styles.active : undefined }>
                     Users Page</NavLink> </li>
-                <li> <NavLink to ='/Single' 
-                className={({ isActive }) => isActive ? styles.active : undefined }>Single post</NavLink> </li>
+                <li> <NavLink to ='/single-post' 
+                className={({ isActive }) => isActive ? styles.active : undefined }>Blog</NavLink> </li>
                 <li> <NavLink to ='/Pages' 
                 className={({ isActive }) => isActive ? styles.active : undefined }>Pages</NavLink> </li>
                 <li> <NavLink to ='/Contact' 
