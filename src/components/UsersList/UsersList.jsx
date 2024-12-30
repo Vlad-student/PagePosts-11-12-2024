@@ -1,6 +1,6 @@
 import { useSelector,useDispatch  } from "react-redux";
 import PropTypes from 'prop-types';
-// import Spinner from "../Spinner/Spinner";
+import Spinner from "../Spinner/Spinner";
 import { useEffect } from "react";
 import { getAllUsersAsync } from "../../store/usersSlice";
 import UserCard from "./UserCard";
@@ -18,8 +18,8 @@ const showUser = (user)=> <UserCard key={user.id} user={user}/>;
 
 
     if (error){return <p>{error}</p>}
-    // if (isPending) {return <Spinner/>}
-    if (isPending) { return <p>Loading</p> }
+    if (isPending) {return <Spinner/>}
+    // if (isPending) { return <p>Loading</p> }
 
     return (
         users.length === 0 ? (<p>list users empty</p>)

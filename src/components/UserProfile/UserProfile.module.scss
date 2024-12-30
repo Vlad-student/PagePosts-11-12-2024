@@ -1,0 +1,21 @@
+@use '/src/common/styles/templates' as *;
+@use '/src/common/styles/Colors' as *;
+
+.bg{
+    margin-top: 30px;
+    background-color: $lavander ;
+}
+
+.wrapper{
+    @extend %limit-width
+}
+
+.user-info{
+    display: flex;
+    padding: 70px 0;
+}
+
+ .bottom-line{
+    height: 17px;
+    background-image: linear-gradient(to right, $yellow 70%, $purple 70% );
+ }
