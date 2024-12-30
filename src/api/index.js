@@ -19,3 +19,11 @@ export const getAllUsers = (options)=>{
     return httpClient.get(`/users?${query}`);
 } 
 export const getOneUser = (id) => httpClient.get(`/users/${id}`);
+
+
+export const getAllPosts = (options) => {
+const query = queryString.stringify(options);
+return httpClient.get(`/posts?${query}`)
+}
+
+export const getOnePost = (id) => httpClient.get(`/posts/${id}`);
