@@ -1,5 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { getAllPosts, getOnePost } from "../api";
+import { build } from "vite";
+import { act } from "react";
 
 
 export const getAllPostsAsync = createAsyncThunk(
@@ -47,6 +49,18 @@ const postsSlice = createSlice({
             state.isPending = false;
             state.error = action.payload;
         });
+        builder.addCase(getOnePostAsync.pending, (state)=>{
+            state.isPending = true;
+        });
+        builder.addCase(getOnePostAsync.fulfilled, (state,action)=>{
+            state.isPending = false;
+            state.selectedPost = action.payload;
+        });
+        builder.addCase(getOnePostAsync.rejected, (state, action)=>{
+            state.isPending = false;
+            state.error = action.payload;
+        });
+
     },
 
 });
