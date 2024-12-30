@@ -1,3 +1,6 @@
+
+@use '/src/common/styles/Colors' as *;
+
 .menu{
     text-decoration: none;
     li{
@@ -7,3 +10,8 @@
         padding: 0.5em;
     }
 }
+
+.active{
+    background-color: $yellow;
+}
+

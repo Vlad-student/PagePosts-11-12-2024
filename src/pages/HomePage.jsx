@@ -1,9 +1,10 @@
+import UsersList from "../components/UsersList/UsersList";
 
 
 const HomePage = () => {
     return (
         <div>
-            <h1>HomePage</h1>
+            <UsersList/>
         </div>
     );
 }

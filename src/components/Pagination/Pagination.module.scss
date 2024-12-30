@@ -1,0 +1,21 @@
+@use '/src/common/styles/Colors' as *;
+@use '/src/common/styles/templates' as *;
+
+pagination{
+    @extend %flex-center;
+     color: $yellow;
+}
+.page{
+    background-color: $yellow;
+display: inline-block;
+width: 32px;
+height: 32px;
+border-radius: 50%;
+font-size: 20px;
+font-weight: 700 ;
+text-align: center;
+transform: translateY(-14px);
+}
+
+
+
