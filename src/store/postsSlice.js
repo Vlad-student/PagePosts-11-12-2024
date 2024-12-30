@@ -1,7 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { getAllPosts, getOnePost } from "../api";
-import { build } from "vite";
-import { act } from "react";
 
 
 export const getAllPostsAsync = createAsyncThunk(
