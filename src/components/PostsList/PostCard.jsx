@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const PostCard = (props) => {
-    const {post} = props;
+    const {post, withPic} = props;
     const navigate = useNavigate();
     const navigateToPostPage = () => {
         navigate(`/single-post/${post.id}`)
@@ -12,10 +12,10 @@ const PostCard = (props) => {
     return (
         <article>
             <div onClick={navigateToPostPage}>
-                <picture>
+                {withPic && <picture>
                     <source media='(min-width: 960px)' srcSet='/images/600x400.png' />
                     <img src="/images/300x200.png" alt="{post.title}" />
-                </picture>
+                </picture>}
               <h2>{post.title}</h2>
             <p>{post.body.slice(0, 80)}...</p>  
             </div>
@@ -31,7 +31,7 @@ PostCard.propTypes = {
        title:PropTypes.string,
        body: PropTypes.string, 
     }),
-
+withPic: PropTypes.bool,
 };
 
 
