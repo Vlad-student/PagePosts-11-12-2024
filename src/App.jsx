@@ -7,6 +7,7 @@ import SinglePost from './pages/Single-Post';
 import Pages from './pages/Pages';
 import Contact from './pages/Contact';
 import UserProfile from "./components/UserProfile/UserProfile";
+import PostPage from "./pages/PostPage";
 
 
 function App() {
@@ -21,7 +22,11 @@ function App() {
         <Route path='/single-post' element= {<SinglePost/>} />
         <Route path='/Pages' element= {<Pages/>} />
         <Route path='/Contact' element= {<Contact/>} />
+         <Route path="/single-post/:postId" element={<PostPage/>} />
+
        <Route path='*' element= {<NotFoundPage/>} />
+
+      
       </Routes>
     </BrowserRouter>
   )
