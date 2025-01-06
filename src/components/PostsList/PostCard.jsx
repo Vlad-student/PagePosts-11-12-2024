@@ -33,16 +33,17 @@ const stopPropagation = (event) =>{
 }
 
     return (
-        <article className={styles['post-card']}>
-            <div onClick={navigateToPostPage}>
+        <article className={styles['post-card']} onClick={navigateToPostPage}>
                 {withPic && <picture>
                     <source media='(min-width: 960px)' srcSet='/images/600x400.png' />
                     <img src="/images/300x200.png" alt="{post.title}" />
                 </picture>}
-                <p> By <Link to={`/users/${post.userId}`} onClick={stopPropagation} > {author}</Link> </p>
+                
+                <div>
+                 {withPic ? <p>{post.tags.join(' | ')}</p> :   <p> By <Link to={`/users/${post.userId}`} onClick={stopPropagation} > {author}</Link> </p>}
               <h2>{post.title}</h2>
-            <p>{post.body.slice(0, 80)}...</p>  
-            </div>
+            <p>{post.body.slice(0, 80)}...</p>
+             </div>
             
         </article>
     );
@@ -55,6 +56,7 @@ PostCard.propTypes = {
        title:PropTypes.string,
        body: PropTypes.string, 
        userId: PropTypes.number,
+       tags: PropTypes.array,
     }),
 withPic: PropTypes.bool,
 };

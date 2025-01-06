@@ -1,6 +1,9 @@
 @use '/src/common/styles/Colors' as *;
+@use '/src/common/styles/breakpoints' as *;
 
 .post-card{
+    display: flex;
+    flex-direction: column;
     text-align: left;
     border: 1px solid rgb(206, 160, 160);
     padding: 25px 34px;
@@ -8,5 +11,13 @@
     background-color: beige;
 &:hover{
     background-color: $yellow;
+}
+a:hover{
+    color: $purple;
+    font-weight: 600 ;
+    text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
+}
+@media all and (max-width:$m){
+    flex-direction: row;
 }
 }
