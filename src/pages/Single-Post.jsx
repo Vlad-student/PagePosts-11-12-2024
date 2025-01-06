@@ -4,7 +4,7 @@ import Pagination from './../components/Pagination/Pagination';
 import { useState } from "react";
 
 const SinglePost = () => {
-    const [page, setPage] = useState();
+    const [page, setPage] = useState(1);
     const limitPosts = CONSTANTS.LIMIT_POSTS.at(2);
     const skip = (page - 1) * 5;
     return (
@@ -17,3 +17,5 @@ const SinglePost = () => {
 }
 
 export default SinglePost;
+
+

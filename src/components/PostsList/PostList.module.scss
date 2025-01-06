@@ -1,0 +1,12 @@
+@use '/src/common/styles/Colors' as *;
+
+.post-card{
+    text-align: left;
+    border: 1px solid rgb(206, 160, 160);
+    padding: 25px 34px;
+    width: 100%;
+    background-color: beige;
+&:hover{
+    background-color: $yellow;
+}
+}
