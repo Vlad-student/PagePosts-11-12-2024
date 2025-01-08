@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import PropTypes from 'prop-types';
 import Spinner from "../Spinner/Spinner";
 import { Link } from "react-router-dom";
+import styles from './FeaturePost.module.scss'
 
 
 const FeaturePost = (props) => {
@@ -21,13 +22,22 @@ const FeaturePost = (props) => {
         return <Spinner/>
     }
 
-return <article>
-    {imgPosition === 'over' && <img src ={'/images/600x400.png'}/>}
+return(
+    <>
+    {imgPosition === 'under'  && <div className={styles['full-screen']}><img  src={'/images/1600x1200.png'} /></div>}
+    <article>
+    <div>
+          {imgPosition === 'over' && <img src ={'/images/600x400.png'}/>}
 <h2>{featurePost.title}</h2>
-<p>{featurePost.body}</p>
-<button><Link to={`/posts/$featuredPost.id`}>Read more</Link></button>
-</article>;
-}
+<p>{featurePost.body.slice(0,100)}...</p>
+<button><Link to={`/posts/$featuredPost.id`}>Read more</Link></button> 
+    </div>
+ {imgPosition === 'right' && <img src ={'/images/600x400.png'}/>}
+</article>
+    </>
+    
+) ;
+};
 
 
 

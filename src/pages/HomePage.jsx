@@ -9,6 +9,7 @@ import FeaturePost from "../components/FeaturePost/FeaturePost";
 const HomePage = () => {
     return (
         <div>
+            <section className={styles.relative}><FeaturePost imgPosition='under'/></section>
             <section >
                 <div>
                     <h2>Featured Post</h2>
