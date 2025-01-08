@@ -3,12 +3,17 @@ import PostsList from "../components/PostsList/PostsList";
 import UsersList from "../components/UsersList/UsersList";
 import CONSTANTS from "../store/constants";
 import styles from './pages.module.scss'
+import FeaturePost from "../components/FeaturePost/FeaturePost";
 
 
 const HomePage = () => {
     return (
         <div>
             <section >
+                <div>
+                    <h2>Featured Post</h2>
+                    <FeaturePost imgPosition='over'/>
+                    </div>
                 <div className={styles.line}>
                         <h2>All posts</h2>
                 <Link to ='/single-post'>view all</Link>  

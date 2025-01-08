@@ -1,3 +1,4 @@
+import FeaturePost from "../components/FeaturePost/FeaturePost";
 import PostsList from "../components/PostsList/PostsList";
 import CONSTANTS from "../store/constants";
 import Pagination from './../components/Pagination/Pagination';
@@ -8,11 +9,16 @@ const SinglePost = () => {
     const limitPosts = CONSTANTS.LIMIT_POSTS.at(2);
     const skip = (page - 1) * 5;
     return (
-        <div>
+        <>
+        <section>
+            <FeaturePost imgPosition ='right'/>
+        </section>
+           <div>
             <h1>Blog</h1>
             <PostsList withPic limit={limitPosts} skip={skip} />
             <Pagination page={page} setPage={setPage} />
         </div>
+        </>
     );
 }
 
