@@ -1,5 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { getAllPosts, getOnePost } from "../api";
+import { getAllPosts, getOnePost, getAllCommentsByPost } from "../api";
+
+
 
 
 export const getAllPostsAsync = createAsyncThunk(
@@ -26,11 +28,24 @@ async (id, thunkAPI) => {
 }
 );
 
+
+export const getAllCommentsByPostAsync = createAsyncThunk(
+    'posts/getAllCommentsByuPostAsync',
+    async (id, thunkAPI)=>{
+        try {
+            const response = await getAllCommentsByPost(id);
+            return response.data.comments;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error?.message || 'Post not found');
+        }
+    }
+)
 const postsSlice = createSlice({
     name:'posts',
     initialState: {
         posts: [],
-        selectedPosts: null,
+        selectedPost: null,
+        comments: [],
         error: null,
         isPending: false,
     },
@@ -58,7 +73,17 @@ const postsSlice = createSlice({
             state.isPending = false;
             state.error = action.payload;
         });
-
+builder.addCase(getAllCommentsByPostAsync.pending, (state)=>{
+    state.isPending = true;
+});
+builder.addCase(getAllCommentsByPostAsync.fulfilled, (state,action)=>{
+    state.isPending = false;
+    state.comments = action.payload;
+});
+builder.addCase(getAllCommentsByPostAsync.rejected, (state, action)=>{
+    state.isPending = false;
+    state.error = action.payload;
+});
     },
 
 });

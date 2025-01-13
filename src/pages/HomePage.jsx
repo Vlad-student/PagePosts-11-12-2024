@@ -9,18 +9,22 @@ import FeaturePost from "../components/FeaturePost/FeaturePost";
 const HomePage = () => {
     return (
         <div>
-            <section className={styles.relative}><FeaturePost imgPosition='under'/></section>
-            <section >
-                <div>
+            <section className={styles.relative}>
+                <FeaturePost imgPosition='under'/>
+                </section>
+            <section className={styles['all-posts']} >
+                <div className={styles['featured-post']}>
                     <h2>Featured Post</h2>
                     <FeaturePost imgPosition='over'/>
                     </div>
-                <div className={styles.line}>
+                    <div>
+  <div className={styles.line}>
                         <h2>All posts</h2>
                 <Link to ='/single-post'>view all</Link>  
                 </div>
-          
                 <PostsList limit={CONSTANTS.LIMIT_POSTS.at(1)}/>
+                    </div>
+              
             </section>
             <section>
                 <h2>List of authors</h2>

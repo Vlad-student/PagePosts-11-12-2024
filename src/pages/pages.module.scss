@@ -1,5 +1,12 @@
 @use  '/src/common/styles/templates' as *;
 
+.relative{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+}
+
+
 .wrapper{
 @extend %limit-width;
 h1{
@@ -13,6 +20,9 @@ text-align: center;
    align-items: center;
 }
 
-.relative{
-    position: relative;
+.all-posts{
+    display: flex;
+    .featured-post{
+        width: 85%;
+    }
 }

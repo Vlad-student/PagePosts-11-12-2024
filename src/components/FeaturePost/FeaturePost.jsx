@@ -24,8 +24,10 @@ const FeaturePost = (props) => {
 
 return(
     <>
-    {imgPosition === 'under'  && <div className={styles['full-screen']}><img  src={'/images/1600x1200.png'} /></div>}
-    <article>
+    {imgPosition === 'under'  && <div>
+        <img className={styles['full-screen']} src={'/images/1600x1200.png'} />
+    </div>}
+    <article className={styles['featured-blog']}>
     <div>
           {imgPosition === 'over' && <img src ={'/images/600x400.png'}/>}
 <h2>{featurePost.title}</h2>
