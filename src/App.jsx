@@ -8,6 +8,7 @@ import Pages from './pages/Pages';
 import Contact from './pages/Contact';
 import PostPage from "./pages/PostPage";
 import UserPage from './pages/UserPage'
+import TagPage from "./pages/TagPage";
 
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
         <Route path='/Pages' element= {<Pages/>} />
         <Route path='/Contact' element= {<Contact/>} />
          <Route path="/single-post/:postId" element={<PostPage/>} />
+
+         <Route path ='/single-post/tag/:tagName' element={<TagPage/>} />
 
        <Route path='*' element= {<NotFoundPage/>} />
 
