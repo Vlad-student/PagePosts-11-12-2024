@@ -57,7 +57,7 @@ return <p>Post not found</p>
             <div>
                 <div>
                 <img src={avatar}  />
-                <p>{author}</p>
+                <p>{author} ({selectedPost.userId})</p>
 <p>views: {selectedPost.views} </p>
             </div>
             <div>
@@ -68,6 +68,9 @@ return <p>Post not found</p>
             
           
             <h1>{selectedPost.title}</h1>
+            <picture>
+                <img src ='/images/1600x1200.png'/>
+            </picture>
             <p>{selectedPost.body}</p>
             <h3>Comments:</h3>
             {comments.length === 0 ? <p>empty comments list</p> : <CommentsList comments={comments}/> }
