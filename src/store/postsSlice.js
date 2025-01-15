@@ -1,7 +1,18 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { getAllPosts, getOnePost, getAllCommentsByPost, getAllPostsByUser } from "../api";
+import { getAllPosts, getOnePost, getAllCommentsByPost, getAllPostsByUser, getAllTags } from "../api";
 
 
+export const getAllTagsAsync = createAsyncThunk(
+    'posts/getAllTagsAsync',
+    async (args, thunkAPI)=>{
+        try {
+           const response = await getAllTags();
+            return response.data;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error?.message || 'Post not found');
+        }
+    }
+)
 
 
 export const getAllPostsAsync = createAsyncThunk(
@@ -58,11 +69,25 @@ const postsSlice = createSlice({
         postByUser: [],
         selectedPost: null,
         comments: [],
+        tags:[],
         error: null,
         isPending: false,
     },
     reducers: {},
     extraReducers: (builder) => {
+        builder.addCase(getAllTagsAsync.pending, (state)=>{
+            state.isPending = true;
+        });
+        builder.addCase(getAllTagsAsync.fulfilled, (state,action)=>{
+            state.isPending = false;
+            state.tags = action.payload;
+
+        });
+        builder.addCase(getAllTagsAsync.rejected, (state,action)=>{
+            state.isPending = false;
+            state.error = action.payload;
+        });
+
         builder.addCase(getAllPostsAsync.pending, (state)=>{
             state.isPending = true;
         });

@@ -26,7 +26,6 @@ const PostListByUser = () => {
 
 
 
-
 PostListByUser.propTypes = {
 
 };

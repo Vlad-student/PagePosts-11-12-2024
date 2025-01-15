@@ -4,6 +4,7 @@ import UsersList from "../components/UsersList/UsersList";
 import CONSTANTS from "../store/constants";
 import styles from './pages.module.scss'
 import FeaturePost from "../components/FeaturePost/FeaturePost";
+import TagsList from "../components/TagsList/TagsList";
 
 
 const HomePage = () => {
@@ -24,11 +25,15 @@ const HomePage = () => {
                 </div>
                 <PostsList limit={CONSTANTS.LIMIT_POSTS.at(1)}/>
                     </div>
-              
             </section>
             <section>
                 <h2>List of authors</h2>
             <UsersList/>
+            </section>
+
+            <section>
+                <h2>choose a tag</h2>
+                <TagsList/>
             </section>
          
         </div>

@@ -31,3 +31,4 @@ export const getOnePost = (id) => httpClient.get(`/posts/${id}`);
 export const getAllCommentsByPost = (id) => httpClient.get(`/comments/post/${id}`) ;
 
 export const getAllPostsByUser = (id) => httpClient.get(`/posts/user/${id}`)
+ export const getAllTags = () => httpClient.get('/posts/tag-list')
