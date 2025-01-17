@@ -80,7 +80,7 @@ const postsSlice = createSlice({
     name:'posts',
     initialState: {
         posts: [],
-        postByUser: [],
+        postsByUser: [],
         selectedPost: null,
         comments: [],
         tags:[],
@@ -157,7 +157,7 @@ builder.addCase(getAllPostsByUserAsync.pending, (state, action)=>{
 });
 builder.addCase(getAllPostsByUserAsync.fulfilled, (state, action)=>{
     state.isPending = false;
-    state.error = action.payload;
+    state.postsByUser = action.payload;
 });
 
 builder.addCase(getAllPostsByUserAsync.rejected, (state, action)=>{

@@ -23,10 +23,10 @@ const PostListByUser = () => {
         return <p><Spinner/></p>
     };
     
-    return postsByUser?.length === 0 ? (
+    return postsByUser.length === 0 ? (
         <p>posts list is empty</p>
       ) : (
-        <section>{postsByUser?.map(showPost)}</section>
+        <section>{postsByUser.map(showPost)}</section>
       );
     };
 
