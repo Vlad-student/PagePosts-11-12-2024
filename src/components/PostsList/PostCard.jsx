@@ -32,15 +32,18 @@ const stopPropagation = (event) =>{
     event.stopPropagation();
 }
 
+const showTagLink = (tag) =><Link className={styles['tag-link']} onClick={stopPropagation} key={tag} to={`/single-post/tag/${tag}` }>{tag}</Link>
+
     return (
         <article className={styles['post-card']} onClick={navigateToPostPage}>
                 {withPic && <picture>
-                    <source media='(min-width: 960px)' srcSet='/images/600x400.png' />
+                    <source  media='(min-width: 960px)' srcSet='/images/600x400.png' />
                     <img src="/images/300x200.png" alt="{post.title}" />
                 </picture>}
                 
                 <div>
-                 {withPic ? <p>{post.tags.join(' | ')}</p> :   <p> By <Link to={`/users/${post.userId}`} onClick={stopPropagation} > {author}</Link> </p>}
+                 {withPic ? <p>{post.tags.map(showTagLink)}</p>
+                  :   <p> By <Link to={`/users/${post.userId}`} onClick={stopPropagation} > {author}</Link> </p>}
               <h2>{post.title}</h2>
             <p>{post.body.slice(0, 80)}...</p>
              </div>

@@ -7,11 +7,13 @@
 }
 
 .wrapper{
-    @extend %limit-width
+    width: 400px;
+    height: 350px;
 }
 
 .user-info{
     display: flex;
+    justify-content: center;
     padding: 70px 0;
 }
 

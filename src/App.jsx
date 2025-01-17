@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import PostPage from "./pages/PostPage";
 import UserPage from './pages/UserPage'
 import TagPage from "./pages/TagPage";
+import Footer from "./components/Footer/Footer";
 
 
 function App() {
@@ -29,9 +30,9 @@ function App() {
          <Route path ='/single-post/tag/:tagName' element={<TagPage/>} />
 
        <Route path='*' element= {<NotFoundPage/>} />
-
-      
       </Routes>
+
+      <Footer/>
     </BrowserRouter>
   )
 }

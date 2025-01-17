@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Spinner from '../Spinner/Spinner';
@@ -17,18 +16,23 @@ const PostListByUser = () => {
     }, [dispatch,userId]);
     const showPost = (post) =><PosrCard key={post.id} post={post} withPic= {true}  />;
 
-    if(error){return <p>{}error</p>};
-
+    if(error){
+        return <p>{error}</p>
+    };
     if(isPending){
         return <p><Spinner/></p>
-    }
-    return postsByUser.length === 0 ? <p>posts list is empty</p> : <section>{postsByUser.map(showPost)}</section> };
+    };
+    
+    return postsByUser?.length === 0 ? (
+        <p>posts list is empty</p>
+      ) : (
+        <section>{postsByUser?.map(showPost)}</section>
+      );
+    };
 
 
 
-PostListByUser.propTypes = {
 
-};
 
 
 export default PostListByUser;

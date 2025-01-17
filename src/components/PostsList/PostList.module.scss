@@ -7,7 +7,7 @@
     text-align: left;
     border: 1px solid rgb(206, 160, 160);
     padding: 25px 34px;
-    width: 100%;
+    width: 90%;
     background-color: beige;
 &:hover{
     background-color: $yellow;
@@ -20,4 +20,17 @@ a:hover{
 @media all and (max-width:$m){
     flex-direction: row;
 }
+img{
+    height: 400px;
+    object-fit: cover;
+}
+
+}
+
+.tag-link:not(:first-child){
+    padding-left: 0.5rem;
+}
+.tag-link:not(:last-child)::after{
+    content: '|';
+    padding-left: 0.5rem;
 }

@@ -17,9 +17,10 @@ object-fit: cover;
 
 .featured-blog{
     display: flex;
-
+    justify-content: center;
     img{
-        max-width: 80%;
+        max-width: 40%;
+        max-height: 20%;
         object-fit: cover;
     }
     h2{
@@ -27,3 +28,7 @@ object-fit: cover;
     }
 }
 
+.image-name{
+    width: 60%;
+    height: 40%;
+}

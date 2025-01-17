@@ -9,7 +9,7 @@ const TagPage = () => {
         <div>
             <h1>{tagName}</h1>
             <section>
-                <TagPosts tagname={tagName} />
+                <TagPosts tagName={tagName} />
             </section>
             <section>
                 <TagsList/>

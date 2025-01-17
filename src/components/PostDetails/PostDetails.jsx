@@ -6,7 +6,7 @@ import CommentsList from '../CommentsList/CommentsList';
 import { getOneUser } from './../../api/index';
 import { Icon } from '@mdi/react';
 import { mdiThumbUpOutline, mdiThumbDownOutline } from '@mdi/js';
-
+import styles from './PostDetails.module.scss';
 
 
 const PostDetails = () => {
@@ -56,7 +56,7 @@ return <p>Post not found</p>
         <article>
             <div>
                 <div>
-                <img src={avatar}  />
+                <img className={styles.avatar} src={avatar}  />
                 <p>{author} ({selectedPost.userId})</p>
 <p>views: {selectedPost.views} </p>
             </div>

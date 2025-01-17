@@ -28,7 +28,7 @@ return(
         <img className={styles['full-screen']} src={'/images/1600x1200.png'} />
     </div>}
     <article className={styles['featured-blog']}>
-    <div>
+    <div className={styles['image-name']}>
           {imgPosition === 'over' && <img src ={'/images/600x400.png'}/>}
 <h2>{featurePost.title}</h2>
 <p>{featurePost.body.slice(0,100)}...</p>
