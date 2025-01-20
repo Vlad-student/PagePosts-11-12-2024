@@ -9,6 +9,7 @@ import { clearError, clearUser } from '../../store/userSlice';
 import Spinner from '../Spinner/Spinner';
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.scss'
+import SearchForm from '../forms/SearchForm/SearchForm';
 
 const Header = () => {
     const {user, error, isPending} = useSelector((state)=>state.user);
@@ -38,7 +39,7 @@ const Header = () => {
             <div className={styles.headerBottom}>
                 <NavLink to='/Home' className={styles.logo}>Logo</NavLink>
                 <Menu/>
-                <input type="text" placeholder='search' />
+               <SearchForm/>
             </div>
             
             
