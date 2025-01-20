@@ -1,20 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { mdiMagnify } from '@mdi/js';
 import Icon from '@mdi/react';
 
 
 const SearchForm = () => {
+    const navigate = useNavigate();
 const formik = useFormik({
     initialValues: {
         q:''
     },
     onSubmit: (values) =>{
-        console.log(values);
-        
-    }
-})
+        const trimQ = values.q.trim();
+        navigate(`/single-post/search?q=${trimQ}`);
+    },
+});
 
 
     return (
@@ -26,15 +26,6 @@ const formik = useFormik({
     );
 };
 
-
-
-
-
-
-
-SearchForm.propTypes = {
-
-};
 
 
 export default SearchForm;

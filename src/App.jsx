@@ -10,6 +10,7 @@ import PostPage from "./pages/PostPage";
 import UserPage from './pages/UserPage'
 import TagPage from "./pages/TagPage";
 import Footer from "./components/Footer/Footer";
+import SearchResultPage from "./pages/SearchResultPage";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
          <Route path="/single-post/:postId" element={<PostPage/>} />
 
          <Route path ='/single-post/tag/:tagName' element={<TagPage/>} />
+         <Route path ='/single-post/search' element={<SearchResultPage/>} />
 
        <Route path='*' element= {<NotFoundPage/>} />
       </Routes>
