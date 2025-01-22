@@ -5,7 +5,7 @@ import styles from './Pagination.module.scss'
  
 
 const Pagination = (props) => {
-    const {page, setPage} = props; 
+    const {page, setPage, total, limit} = props; 
     const setPrevPage = () =>{
         if(page>1){ setPage((prev)=>prev-1)}}
     const setNextPage = () =>{
@@ -17,9 +17,9 @@ if (page<100){setPage((prev)=>prev+1)}};
                 <Icon size={2} path={mdiChevronLeft}/>
                 </span>
                 <span className={styles.page}>{page}</span>
-                <span onClick={setNextPage}>
+               {(total - (limit*page)>0) && <span onClick={setNextPage}>
                 <Icon size={2} path={mdiChevronRight}/>
-               </span>         
+               </span>   }      
         </div>
     );
 }
@@ -28,5 +28,7 @@ if (page<100){setPage((prev)=>prev+1)}};
 Pagination.propTypes = {
     page: PropTypes.number,
     setPage: PropTypes.func,
+    total: PropTypes.number,
+    limit: PropTypes.number,
 };
 export default Pagination;
