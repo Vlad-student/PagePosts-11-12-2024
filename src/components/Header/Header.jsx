@@ -1,7 +1,7 @@
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import Menu from "../Menu/Menu";
 import Icon from '@mdi/react'
-import { mdiLoginVariant, mdiLogoutVariant } from '@mdi/js';
+import { mdiLoginVariant, mdiLogoutVariant, mdiLightbulbNightOutline, mdiLightbulbNight  } from '@mdi/js';
 import Modal from './../Modal/Modal';
 import LoginForm from '../forms/LoginForm';
 import { useSelector, useDispatch } from "react-redux";
@@ -10,11 +10,20 @@ import Spinner from '../Spinner/Spinner';
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.scss'
 import SearchForm from '../forms/SearchForm/SearchForm';
+import {ThemeContext} from '../../context/ThemeContext';
+import CONSTANTS from '../../store/constants';
+
+
+const {THEMES} = CONSTANTS;
+
+
+
 
 const Header = () => {
     const {user, error, isPending} = useSelector((state)=>state.user);
     const dispatch = useDispatch();
     const [isShowModal, setIsShowModal ] = useState(false);
+    const {theme, toggleTheme} = useContext(ThemeContext);
     const handLogin = ()=>{
         setIsShowModal(true);
     }
@@ -40,6 +49,13 @@ const Header = () => {
                 <NavLink to='/Home' className={styles.logo}>Logo</NavLink>
                 <Menu/>
                <SearchForm/>
+               <span onClick={toggleTheme}>
+                {theme === THEMES.LIGHT ? (
+                    <Icon size={1} path={mdiLightbulbNight}  />
+                ) : (
+                    <Icon  size={1}  path={mdiLightbulbNightOutline}  />
+                )}
+               </span>
             </div>
             
             
