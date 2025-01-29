@@ -1,0 +1,26 @@
+@use '/src/common/styles/Colors' as *;
+@use '/src/common/styles/breakpoints' as *;
+
+.linePost{
+    display: inline-flex;
+    width: 550px;
+    height: 600px;
+    align-items: center;
+
+    a:hover{
+        color: $purple;
+        font-weight: 600 ;
+        text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
+    }
+    @media all and (max-width:$m){
+        flex-direction: row;
+    }
+    img{
+        display: inline-flex;
+        height: 200px;
+        width: 200px;
+        object-fit: cover;
+        transform: translate(200px,-195px);
+        
+    }
+}

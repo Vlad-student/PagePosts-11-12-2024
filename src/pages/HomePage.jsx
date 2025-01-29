@@ -5,6 +5,7 @@ import CONSTANTS from "../store/constants";
 import styles from './pages.module.scss'
 import FeaturePost from "../components/FeaturePost/FeaturePost";
 import TagsList from "../components/TagsList/TagsList";
+import ReadNext from "../components/ReadNext/ReadNext";
 
 
 const HomePage = () => {
@@ -35,6 +36,15 @@ const HomePage = () => {
                 <h2>choose a tag</h2>
                 <TagsList/>
             </section>
+             
+             <section>
+                <h1>What to read next</h1>
+                       <ReadNext  />
+                
+                 
+
+           
+             </section>
          
         </div>
     );
